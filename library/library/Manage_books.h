@@ -1,9 +1,10 @@
+#pragma once
 #include"set"
 #include "map"
 #include"string"
+#include "Books.h"
 #define MAX_books 100;
-using namespace std;
-class CManage_books
+class CManage_books :public CBooks
 {
 public:
 	CManage_books();
@@ -12,6 +13,5 @@ public:
 	void alter_books(string book);
 	~CManage_books();
 	string book;
-	map<string,int>books;
 };
 

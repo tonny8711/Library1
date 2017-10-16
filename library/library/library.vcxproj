@@ -110,13 +110,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Books.h" />
+    <ClInclude Include="Book_search.h" />
     <ClInclude Include="Brrow_books.h" />
     <ClInclude Include="Manage_books.h" />
+    <ClInclude Include="Reach.h" />
+    <ClInclude Include="Reader.h" />
+    <ClInclude Include="Reader_search.h" />
     <ClInclude Include="Replay_book.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Books.cpp" />
+    <ClCompile Include="Book_search.cpp" />
     <ClCompile Include="Brrow_books.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Manage_books.cpp" />
+    <ClCompile Include="Reach.cpp" />
+    <ClCompile Include="Reader.cpp" />
+    <ClCompile Include="Reader_search.cpp" />
     <ClCompile Include="Replay_book.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,7 +1,6 @@
 #pragma once
-#include "Brrow_books.h"
-class CReplay_book :
-	public CBrrow_books,CManage_books
+#include "Books.h"
+class CReplay_book :public CBooks
 {
 public:
 	CReplay_book();

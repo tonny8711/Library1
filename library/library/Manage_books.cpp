@@ -1,5 +1,7 @@
 #include "Manage_books.h"
 #include "iostream"
+#include   <functional> 
+#include   <algorithm> 
 
 
 
@@ -22,6 +24,7 @@ CManage_books::CManage_books()
 	}
 	if (import_num == 1)
 	{
+		cout << "请输入书名:";
 		cin >> book;
 		creat_books( book );
 		book = "\0";
@@ -42,12 +45,32 @@ CManage_books::CManage_books()
 
 void CManage_books::creat_books(string book)
 {
-	if (find(books.begin, books.end, book) == books.end)
+	if (books.find( book) == books.end())
 	{
-		int num_book = 0;
+		string num_book = "\0";
+		cout << "请输入书号:";
 		cin >> num_book;
 		rewind(stdin);
-		books.insert(make_pair(book, num_book));
+		book_ID.insert(make_pair(book, num_book));
+		ID_book.insert(make_pair( num_book, book));
+		string author;
+		cout << "请输入作者:";
+		cin >> author;
+		rewind(stdin);
+		author_book.insert(make_pair(author, book));
+		book_author.insert(make_pair( book,author));
+		string press;
+		cout << "请输入出版社:";
+		cin >> press;
+		rewind(stdin);
+		press_book.insert(make_pair(press, book));
+		book_press.insert(make_pair(book,press));
+		string booktime;
+		cout << "请输入出版时间:";
+		cin >> booktime;
+		rewind(stdin);
+		time_book.insert(make_pair(booktime, book));
+		book_time.insert(make_pair( book,booktime));
 	}
 	else
 	{
@@ -57,9 +80,9 @@ void CManage_books::creat_books(string book)
 
 void CManage_books::delete_books(string book)
 {
-	map<string,int>::iterator ite = books.begin;
-	ite = find(books.begin, books.end, book);
-	if (ite != books.end)
+	map<string,int>::iterator ite = books.begin();
+	ite = books.find( book);
+	if (ite != books.end())
 	{
 		while (1)
 		{
@@ -69,7 +92,10 @@ void CManage_books::delete_books(string book)
 			cin >> choice;
 			rewind(stdin);
 			if (choice == 1)
+			{
 				books.erase(ite);
+
+			}
 			else if (choice == 0)
 				choice = -1;
 			else
@@ -85,8 +111,8 @@ void CManage_books::delete_books(string book)
 void CManage_books::alter_books(string book)
 {
 	map<string,int>::iterator ite;
-	ite = find(books.begin, books.end, book);
-	if (ite != books.end)
+	ite = books.find( book);
+	if (ite != books.end())
 	{
 		while (1)
 		{
@@ -108,7 +134,7 @@ void CManage_books::alter_books(string book)
 				cout << "请输入新的ID" << endl;
 				int num_book = ite->second;
 				books.erase(ite);
-				books.insert(make_pair(book, num_book));
+				books.insert(pair<string,int>(book, num_book));
 				break;
 			}
 			else

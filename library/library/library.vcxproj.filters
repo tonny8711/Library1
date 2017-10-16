@@ -24,6 +24,21 @@
     <ClInclude Include="Replay_book.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Books.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Reader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Book_search.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Reader_search.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Reach.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Brrow_books.cpp">
@@ -33,6 +48,24 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Replay_book.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Books.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Reader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Book_search.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Reader_search.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Reach.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

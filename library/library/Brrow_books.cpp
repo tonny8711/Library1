@@ -1,14 +1,15 @@
 #include "Brrow_books.h"
-
+#include   <functional> 
+#include   <algorithm> 
 
 
 CBrrow_books::CBrrow_books()
 {
 	cout << "请输入图书编号" << endl;
 	cin >> id_book;
-	map<string, int>::iterator ite = books.begin;
-	ite = find(books.begin, books.end, book);
-	if (ite != books.end)
+	map<string, int>::iterator ite = books.begin();
+	ite = books.find(id_book);
+	if (ite != books.end())
 	{
 		if (ite->second != 0)
 		{
@@ -18,7 +19,7 @@ CBrrow_books::CBrrow_books()
 			brrow_student.insert(make_pair(num_student, ite->first));
 			int num_books = ite->second;
 			books.erase(ite);
-			books.insert(make_pair(id_book, ite->second - 1));
+			books.insert(pair<string,int>(id_book, ite->second - 1));
 		}
 		else
 			cout << "该书已被借出" << endl;
