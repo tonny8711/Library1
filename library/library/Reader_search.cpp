@@ -9,7 +9,7 @@ CReader_search::CReader_search()
 		cout << "按<1>名字搜索，<2>学号搜索" << endl;
 		int choice = -1;
 		cin >> choice;
-		rewind(stdin);
+		//fflush(stdin);
 		if (choice == 1)
 		{
 			reader_search();
@@ -32,7 +32,7 @@ void CReader_search::numberstudent_search()
 	cout << "请输入学号:";
 	string id_student = "\0";
 	cin >> id_student;
-	rewind(stdin);
+	//fflush(stdin);
 	map<string, string>::iterator ite = id_reader.begin();
 	ite = id_reader.find(id_student);
 	cout << "该学生为:" << ite->second << endl;
@@ -49,7 +49,7 @@ void CReader_search::reader_search()
 	cout << "请输入读者:";
 	string reader = "\0";
 	cin >> reader;
-	rewind(stdin);
+	//fflush(stdin);
 	map<string, string>::iterator ite = reader_id.begin();
 	ite = id_reader.find(reader);
 	cout << "该学生的学号为:" << ite->second << endl;

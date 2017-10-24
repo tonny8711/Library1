@@ -12,6 +12,7 @@ public:
 	void delete_books(string book);
 	void alter_books(string book);
 	~CManage_books();
+private:
 	string book;
 };
 

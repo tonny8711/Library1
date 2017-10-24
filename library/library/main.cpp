@@ -9,23 +9,33 @@
 
 void main()
 {
+	CBooks BOOK;
+	BOOK.readfile();
 	while (1)
 	{
 		cout << "<1>借书,<2>还书,<3>书籍管理,<4>读者管理,<5>搜索,<6>退出" << endl;
 		int choice = -1;
+		cin >> choice;
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
 		if (choice == 1)
-			CBrrow_books;
+			CBrrow_books( );
 		else if (choice == 2)
-			CReplay_book;
+			CReplay_book();
 		else if (choice == 3)
-			CManage_books;
+			CManage_books( );
 		else if (choice == 4)
-			CReader;
+			CReader();
 		else if (choice == 5)
-			CReach;
+			CReach();
 		else if (choice == 6)
 			break;
 		else
 			cout << "输入有误！请重新输入" << endl;
 	}
+	BOOK.getbooks();
+	BOOK.getreader();
+	BOOK.student_brrowbook();
+	BOOK.writefile();
+	
 }

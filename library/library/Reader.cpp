@@ -9,6 +9,8 @@ CReader::CReader()
 	while (1)
 	{
 		cin >> choice;
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
 		if (choice == 1)
 		{
 			create_reader();
@@ -35,14 +37,16 @@ void CReader::create_reader()
 	cout << "学号:";
 	string id_student = "\0";
 	cin >> id_student;
-	rewind(stdin);
+	cin.clear();
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');
 	cout << "姓名:";
 	string name_student = "\0";
 	cin >> name_student;
-	rewind(stdin);
+	cin.clear();
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');
 	map<string, string>::iterator ite = id_reader.begin();
 	ite = id_reader.find(id_student);
-	if (ite == id_reader.end())
+	if (ite != id_reader.end())
 		cout << "该读者已被注册" << endl;
 	else
 	{
@@ -62,7 +66,8 @@ void CReader::delete_reader()
 	cout << "输入所要删除读者的学号" << endl;
 	string id_student = "\0";
 	cin >> id_student;
-	rewind(stdin);
+	cin.clear();
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');
 	map<string, string>::iterator ite1 = id_reader.begin();
 	map<string, string>::iterator ite2= reader_id.begin();
 	ite1 = id_reader.find(id_student);
@@ -78,6 +83,9 @@ void CReader::delete_reader()
 			cout << "学号:" << ite1->first << "姓名:" << ite1->second << endl;
 			cout << "是否要删除？（1为删除，0为放弃）" << endl;
 			int choice = -1;
+			cin >> choice;
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
 			if (choice == 1)
 			{
 				id_reader.erase(ite1);
@@ -102,7 +110,8 @@ void CReader::alter_reader()
 	cout << "输入所要修改读者的学号:" ;
 	string id_student = "\0";
 	cin >> id_student;
-	rewind(stdin);
+	cin.clear();
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');
 	map<string, string>::iterator ite1 = id_reader.begin();
 	map<string, string>::iterator ite2 = reader_id.begin();
 	ite1 = id_reader.find(id_student);
@@ -117,6 +126,9 @@ void CReader::alter_reader()
 			cout << "学号:" << ite1->first << "姓名:" << ite1->second << endl;
 			cout << "是否要修改？（1为修改，0为放弃）" << endl;
 			int choice = -1;
+			cin >> choice;
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
 			if (choice == 1)
 			{
 				string name_student = ite1->second;  
@@ -126,11 +138,13 @@ void CReader::alter_reader()
 				choice = -1;
 				cout << "请输入新的学号:";
 				cin >> id_student;
-				rewind(stdin);
+				cin.clear();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
 				name_student = "\0";
 				cout << "请输入新的姓名:";
 				cin >> name_student;
-				rewind(stdin);
+				cin.clear();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
 				pair<map<string, string>::iterator, bool> pite = id_reader.insert(pair<string, string>(id_student, name_student));
 				reader_id.insert(pair<string, string>(name_student, id_student));
 				if (pite.second == false)

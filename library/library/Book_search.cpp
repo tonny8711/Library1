@@ -9,7 +9,7 @@ CBook_search::CBook_search()
 		cout << "按<1>书名搜索，<2>书号搜索，<3>作者搜索，<4>出版社搜索，<5>出版时间搜索" << endl;
 		int choice = -1;
 		cin >> choice;
-		rewind(stdin);
+		//fflush(stdin);
 		if (choice == 1)
 		{
 			name_search(); 
@@ -46,7 +46,7 @@ void CBook_search::name_search()
 	string name_book = "\0";
 	cout << "请输入书名:";
 	cin >> name_book;
-	rewind(stdin);
+	//fflush(stdin);
 	ite_book = book_ID.find(name_book);
 	if (ite_book != book_ID.end())
 	{
@@ -65,7 +65,7 @@ void CBook_search::number_search()
 	string num_book = 0;
 	cout << "请输入书号:";
 	cin >> num_book;
-	rewind(stdin);
+	//fflush(stdin);
 	ite_number = ID_book.find(num_book);
 	if (ite_number != ID_book.end())
 	{
@@ -87,7 +87,7 @@ void CBook_search::author_search()
 	string author = "\0";
 	cout << "请输入作者:";
 	cin >> author;
-	rewind(stdin);
+	//fflush(stdin);
 	ite_author = author_book.find(author);
 	if (ite_author != author_book.end())
 	{
@@ -109,7 +109,7 @@ void CBook_search::press_search()
 	string press = "\0";
 	cout << "请输入出版社:";
 	cin >> press;
-	rewind(stdin);
+	//fflush(stdin);
 	ite_press = press_book.find(press);
 	if (ite_press != press_book.end())
 	{
@@ -131,7 +131,7 @@ void CBook_search::booktime_search()
 	string booktime = "\0";
 	cout << "请输入出版时间:";
 	cin >> booktime;
-	rewind(stdin);
+	//fflush(stdin);
 	ite_time = time_book.find(booktime);
 	if (ite_time != time_book.end())
 	{

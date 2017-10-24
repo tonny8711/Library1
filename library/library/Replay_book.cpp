@@ -9,16 +9,19 @@ CReplay_book::CReplay_book()
 	string num_student = "\0";
 	cout << "请输入你的学号" << endl;
 	cin >> num_student;
-	rewind(stdin);
-	multimap<string, string>::iterator ite = brrow_student.begin();
-	multimap<string, string>::iterator ite2 = brrow_student.end();
-	ite = brrow_student.find(num_student);
-	if (ite != brrow_student.end())
+	cin.clear();
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	multimap<string, string>::iterator ite ;
+	multimap<string, string>::iterator ite2 = brrow_student.begin();
+	ite = student_brrow.find(num_student);
+	if (ite != student_brrow.end())
 	{
+		ite2 = brrow_student.find(ite->second);
 		string id_book;
 		cout << "输入所借书籍的编号" << endl;
 		cin >> id_book;
-		rewind(stdin);
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
 		while (1)
 		{
 			if (ite->second == id_book)
@@ -33,7 +36,8 @@ CReplay_book::CReplay_book()
 				break;
 			}
 		}
-		brrow_student.erase(ite);
+		student_brrow.erase(ite);
+		brrow_student.erase(ite2);
 		cout << "该书已还" << endl;
 	}
 	else

@@ -7,8 +7,13 @@ class CBooks
 {
 public:
 	CBooks();
+	void readfile();
+	void writefile();
+	void getbooks();
+	void getreader();
+	void student_brrowbook();
 	~CBooks();
-	static multimap<string, string>brrow_student; //借的书，学生
+	static multimap<string, string>brrow_student; //学生学号，书的编号
 	static multimap<string, string>student_brrow;
 	static map<string, string> id_reader;//学号，姓名
 	static map<string, string> reader_id;

@@ -8,6 +8,7 @@ class CBrrow_books :public CBooks
 public:
 	CBrrow_books();
 	~CBrrow_books();
+private:
 	string id_book = "\0";
 	string num_student = "\0";
 	

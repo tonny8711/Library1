@@ -9,7 +9,7 @@ CReach::CReach()
 		cout << "<1>Êé¼®ËÑË÷,<2>Ñ§ºÅËÑË÷" << endl;
 		int choice = -1;
 		cin >> choice;
-		rewind(stdin);
+		//fflush(stdin);
 		if (choice == 1)
 		{
 			CBook_search();
