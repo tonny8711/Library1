@@ -9,15 +9,16 @@ CReach::CReach()
 		cout << "<1>Êé¼®ËÑË÷,<2>Ñ§ºÅËÑË÷" << endl;
 		int choice = -1;
 		cin >> choice;
-		//fflush(stdin);
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
 		if (choice == 1)
 		{
-			CBook_search();
+			Book_search();
 			break;
 		}
 		else if (choice == 2)
 		{
-			CReader_search();
+			Reader_search();
 			break;
 		}
 		else

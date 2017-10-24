@@ -8,6 +8,7 @@ public:
 	~CReader_search();
 	void numberstudent_search();
 	void reader_search();
+	void Reader_search();
 private:
 	multimap<string, string>::iterator ite;
 };

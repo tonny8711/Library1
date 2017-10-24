@@ -562,7 +562,7 @@ void CBooks::student_brrowbook()
 	{
 		if (ite != brrow_student.end())
 		{
-			cout << ite->first << "\t\t" << ite->second << endl;
+			cout << ite->second << "\t\t" << ite->first << endl;
 			ite++;
 		}
 		else

@@ -4,15 +4,55 @@
 
 CBook_search::CBook_search()
 {
+	//while (1)
+	//{
+	//	cout << "按<1>书名搜索，<2>书号搜索，<3>作者搜索，<4>出版社搜索，<5>出版时间搜索" << endl;
+	//	int choice = -1;
+	//	cin >> choice;
+	//	//fflush(stdin);
+	//	if (choice == 1)
+	//	{
+	//		name_search(); 
+	//		break;
+	//	}
+	//	else if (choice == 2)
+	//	{
+	//		number_search();
+	//		break;
+	//	}
+	//	else if (choice == 3)
+	//	{
+	//		author_search();
+	//		break;
+	//	}
+	//	else if (choice == 4)
+	//	{
+	//		press_search();
+	//		break;
+	//	}
+	//	else if (choice == 5)
+	//	{
+	//		booktime_search();
+	//		break;
+	//	}
+	//	else
+	//		cout << "输入有误，请重新输入！" << endl;
+	//}
+}
+
+
+void CBook_search::Book_search()
+{
 	while (1)
 	{
 		cout << "按<1>书名搜索，<2>书号搜索，<3>作者搜索，<4>出版社搜索，<5>出版时间搜索" << endl;
 		int choice = -1;
 		cin >> choice;
-		//fflush(stdin);
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
 		if (choice == 1)
 		{
-			name_search(); 
+			name_search();
 			break;
 		}
 		else if (choice == 2)
@@ -40,7 +80,6 @@ CBook_search::CBook_search()
 	}
 }
 
-
 void CBook_search::name_search()
 {
 	string name_book = "\0";
@@ -62,7 +101,7 @@ void CBook_search::name_search()
 
 void CBook_search::number_search()
 {
-	string num_book = 0;
+	string num_book = "\0";
 	cout << "请输入书号:";
 	cin >> num_book;
 	//fflush(stdin);

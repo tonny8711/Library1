@@ -11,6 +11,7 @@ public:
 	void author_search();
 	void press_search();
 	void booktime_search();
+	void Book_search();
 private:
 	map<string, string>::iterator ite_book = book_ID.begin();
 	map<string, string>::iterator ite_number = ID_book.begin();
